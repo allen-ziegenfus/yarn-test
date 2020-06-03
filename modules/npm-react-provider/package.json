@@ -1,0 +1,27 @@
+{
+	"name": "com.liferay.osb.www.resources.npm.react.provider",
+	"version": "1.0.0",
+	"description": "OSB WWW NPM React Provider",
+	"devDependencies": {
+		"liferay-npm-bundler": "^2.6.2",
+		"liferay-npm-build-support": "^2.6.2",
+		"@babel/cli": "^7.0.0",
+		"@babel/preset-env": "^7.0.0",
+		"@babel/preset-react": "^7.0.0"
+	},
+	"dependencies": {
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"scripts": {
+		"build": "babel --source-maps -d build src && npm run copy-assets && liferay-npm-bundler",
+		"copy-assets": "lnbs-copy-assets",
+		"deploy": "npm run build && lnbs-deploy"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-env",
+			"@babel/preset-react"
+		]
+	}
+}
